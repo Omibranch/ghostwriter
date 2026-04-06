@@ -1,6 +1,8 @@
-# ghostwriter ✍️
+# ghostwriter
 
 > Automatically types realistic-looking code in your terminal. For live streams, recordings, or just looking busy.
+
+[🇷🇺 На русском](#-на-русском) &nbsp;·&nbsp; ⭐ [Star if useful](https://github.com/Omibranch/ghostwriter)
 
 `ghostwriter` writes code snippets character by character, simulating human typing speed — including realistic typos, pauses before keywords, and natural hesitation.
 
@@ -88,9 +90,13 @@ MIT
 
 ---
 
-# ghostwriter ✍️
+<a id="-на-русском"></a>
+
+# ghostwriter
 
 > Автоматически печатает реалистичный код в терминале. Для стримов, записей или просто чтобы выглядеть занятым.
+
+⭐ [Поставь звёздочку, если понравилось](https://github.com/Omibranch/ghostwriter)
 
 `ghostwriter` вводит сниппеты кода посимвольно, имитируя скорость человека — включая опечатки, паузы перед ключевыми словами и естественные заминки.
 
