@@ -2,6 +2,8 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BIN_DIR="${PREFIX:-$HOME/.local/bin}"
+BINARY_NAME="ghostwriter"
 
 echo ""
 echo "  ██████╗ ██╗  ██╗ ██████╗ ███████╗████████╗██╗    ██╗██████╗ ██╗████████╗███████╗██████╗ "
@@ -12,19 +14,21 @@ echo "  ╚██████╔╝██║  ██║╚██████╔�
 echo "   ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝   ╚═╝    ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝"
 echo ""
 
-if ! command -v python3 &>/dev/null; then
-    echo "[ERROR] Python 3 не найден."
+# Check Go
+if ! command -v go &>/dev/null; then
+    echo "[ERROR] Go не найден. Установи Go 1.21+: https://go.dev/dl/"
     exit 1
 fi
 
-PY_VER=$(python3 -c "import sys; print(sys.version_info.major * 10 + sys.version_info.minor)")
-if [ "$PY_VER" -lt 39 ]; then
-    echo "[ERROR] Требуется Python 3.9+."
-    exit 1
-fi
+# Build & install
+echo "[INFO] Собираю $BINARY_NAME..."
+cd "$SCRIPT_DIR"
+go build -o "$BINARY_NAME" ./cmd/ghostwriter/
 
-echo "[INFO] Устанавливаю ghostwriter..."
-pip3 install -e "$SCRIPT_DIR" --quiet
+mkdir -p "$BIN_DIR"
+echo "[INFO] Устанавливаю $BINARY_NAME -> $BIN_DIR/$BINARY_NAME"
+mv "$BINARY_NAME" "$BIN_DIR/$BINARY_NAME"
+chmod +x "$BIN_DIR/$BINARY_NAME"
 
 echo ""
 echo "[SUCCESS] ghostwriter установлен!"
