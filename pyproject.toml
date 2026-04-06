@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ghostwriter"
+version = "1.0.0"
+description = "Пишет код сам по себе в терминале пока тебя нет"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = []
+
+[project.scripts]
+ghostwriter = "ghostwriter.main:main"
