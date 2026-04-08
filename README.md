@@ -2,8 +2,6 @@
 
 > Automatically types realistic-looking code in your terminal. For live streams, recordings, or just looking busy.
 
-[🇷🇺 На русском](#-на-русском) &nbsp;·&nbsp; ⭐ [Star if useful](https://github.com/Omibranch/ghostwriter)
-
 `ghostwriter` writes code snippets character by character, simulating human typing speed — including realistic typos, pauses before keywords, and natural hesitation.
 
 ---
